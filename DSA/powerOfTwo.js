@@ -23,18 +23,32 @@
 // if 'n' is not divisible by 2, return false (not a power of two).
 // step 3: if we reach 1, return true (it is a power of two)
 
-const isPowerOfTwo = (n) => {
-    if(n<0) return false;
+// const isPowerOfTwo = (n) => {
+//     if(n<=0) return false;
 
-    while(n>1){
-        if(n % 2 !==0) return false;
-        n= n / 2;
-    }
-    return true;
+//     while(n>1){
+//         if(n % 2 !==0) return false;
+//         n= n / 2;
+//     }
+//     return true;
+// }
+// console.log(isPowerOfTwo(1)); // true
+// console.log(isPowerOfTwo(2)); // true
+// console.log(isPowerOfTwo(5)); // false
+
+// Note:
+// time complexity of this algorithm is O(log n) because we divide the number by 2 in each iteration, and space complexity is O(1) because we only use a constant amount of extra space.
+
+// another solution :
+
+const isPowerOfTwo = (n) => {
+    if(n<=0) return false;
+    // A number is a power of two if it has exactly one bit set in its binary representation.
+   return (n & (n - 1)) === 0;
 }
 console.log(isPowerOfTwo(1)); // true
 console.log(isPowerOfTwo(2)); // true
 console.log(isPowerOfTwo(5)); // false
 
 // Note:
-// time complexity of this algorithm is O(log n) and space complexity is O(1)
+// time complexity of this algorithm is O(1) because we are using bitwise operation, and space complexity is O(1) because we only use a constant amount of extra space.

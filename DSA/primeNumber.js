@@ -6,21 +6,35 @@
 // Outputs:isPrime(5) ➡️ true (5 is a prime number)
 // isPrime(4) ➡️ false (4 is divisible by 2)
 
+// the input is number
+// the outpust is boolean
+// time complexity = O(n) 
+// space complexity = O(1)
+
 // The algorithm to check if a number 'n' is prime is as follows:
-// step 1: If 'n' is less than or equal to 1, return false (not prime)
-// step 2: loop from 2 to the square root of 'n' and check if 'n' is divisible by any number in that range. If it is, return false (not prime)
+// 1. If the number less or equal 1 return false (not prime)
+// 2. loop from index 2 to the square root of 'n' 
+// 3. check if the number % i === 0
+// 4. if the number === 0 , return false (not prime) 
+// 5. if not accepted return true (prime)
+
+
 
 const isPrime=(n)=>{
-    if(n<=1) return false;
+    if(n <=1) return false // not prime
 
     for(let i=2; i<=Math.sqrt(n); i++){
-        if(n%i===0) return false;
+        if(n % i === 0) return false // not prime
     }
     return true;
     
 }
-console.log(isPrime(5)); // true
+console.log(isPrime(0)); // false
+console.log(isPrime(1)); // false
+console.log(isPrime(3)); // true
 console.log(isPrime(4)); // false
+console.log(isPrime(5)); // true
 
 // Note:
-// time complexity of this algorithm is O(sqrt(n)) and space complexity is O(1)
+// Time Complexity = O(√n) (this faster than O(n))
+//  space complexity = O(1)

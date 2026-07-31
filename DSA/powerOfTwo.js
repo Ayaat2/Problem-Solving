@@ -18,37 +18,45 @@
 
 /* The algorithm to check if a number 'n' is a power of two is as follows:*/
 
-// step 1: if 'n' is less than or equal to 0, return false (not a power of two)
-// step 2: loop while 'n' is greater than 1, divide 'n' by 2 and check if 'n' is divisible by 2. 
-// if 'n' is not divisible by 2, return false (not a power of two).
-// step 3: if we reach 1, return true (it is a power of two)
+// 1. If n is less than or equal to 0, return false.
+// 2. While n is greater than 1:
+//    a. If n is not divisible by 2, return false.
+//    b. Divide n by 2.
+// 3. If the loop finishes and n becomes 1, return true.
+
+const isPowerOfTwo=(n)=>{
+    if(n <= 0) return false;
+
+    while(n > 1){
+
+        if(n % 2 !== 0) return false;
+
+        n= n / 2;
+    }
+    return true;
+}
+console.log(isPowerOfTwo(0)); // false
+console.log(isPowerOfTwo(1)); // true
+console.log(isPowerOfTwo(2)); // true
+console.log(isPowerOfTwo(3)); // false
+console.log(isPowerOfTwo(4)); // true
+console.log(isPowerOfTwo(5)); // false
+
+// Note:
+// time complexity of this algorithm is O(log n) because we divide the number by 2 in each iteration
+// space complexity is O(1) because we only use a constant amount of extra space.
+
+
+// another solution :
 
 // const isPowerOfTwo = (n) => {
 //     if(n<=0) return false;
-
-//     while(n>1){
-//         if(n % 2 !==0) return false;
-//         n= n / 2;
-//     }
-//     return true;
+//     // A number is a power of two if it has exactly one bit set in its binary representation.
+//    return (n & (n - 1)) === 0;
 // }
 // console.log(isPowerOfTwo(1)); // true
 // console.log(isPowerOfTwo(2)); // true
 // console.log(isPowerOfTwo(5)); // false
-
-// Note:
-// time complexity of this algorithm is O(log n) because we divide the number by 2 in each iteration, and space complexity is O(1) because we only use a constant amount of extra space.
-
-// another solution :
-
-const isPowerOfTwo = (n) => {
-    if(n<=0) return false;
-    // A number is a power of two if it has exactly one bit set in its binary representation.
-   return (n & (n - 1)) === 0;
-}
-console.log(isPowerOfTwo(1)); // true
-console.log(isPowerOfTwo(2)); // true
-console.log(isPowerOfTwo(5)); // false
 
 // Note:
 // time complexity of this algorithm is O(1) because we are using bitwise operation, and space complexity is O(1) because we only use a constant amount of extra space.

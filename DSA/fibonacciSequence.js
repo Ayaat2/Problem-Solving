@@ -45,3 +45,6 @@ console.log(fibonacci(0)); // []
 console.log(fibonacci(1)); // [0]
 console.log(fibonacci(5)); // [0, 1, 1, 2, 3]
 
+// Note : 
+// The time complexity of this algorithm is O(n) because we are using a single loop that runs n times.
+// The space complexity is O(n) because we are storing all the Fibonacci numbers in an array.

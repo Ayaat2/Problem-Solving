@@ -18,13 +18,15 @@
 // figure out how to break down the problem into smaller versions of the same problem
 // identify the base case for the recursion
 
-// the algorithm for the recursive Fibonacci function can be defined as follows:
-// step 1: If n is 0, return 0
-// step 2: If n is 1, return 1
-// step 3: Otherwise, return the sum of the (n-1)th and (n-2)th Fibonacci numbers
+/* the algorithm for the recursive Fibonacci function can be defined as follows: */
+
+// step 1: If n is less than 2, return n (base case)
+// step 2: Otherwise, return the sum of the (n-1)th and (n-2)th Fibonacci numbers
 
 const recursiveFibonacci = (n) => {
-    if(n < 2) return n;
+    // Base case: return n if n is 0 or 1
+    if(n < 2) return n; 
+    // Recursive case: sum of the two preceding Fibonacci numbers
     return recursiveFibonacci(n-1) + recursiveFibonacci(n-2);
 }
 console.log(recursiveFibonacci(6)); // 8
